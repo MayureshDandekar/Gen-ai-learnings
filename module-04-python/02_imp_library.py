@@ -17,7 +17,7 @@
 ## Creating our own Pakage
 # __init__.py is the file hat has to be inside the pakage follder. 
 # and __init__.py this file helps us out in definig our pakages and intialising their namespace
-from Pakage_folder.mathematics import *
+from package_folder.mathematics import *
 
 a = 5
 b = 10
