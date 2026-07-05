@@ -1,71 +1,51 @@
 # Module 4: Deep Dive in Python — Notes
 
-## Important Built-in Libraries
+## Python Inbuilt Libraries
 
-### `math`
-Standard library for math operations beyond basic arithmetic.
-```python
-import math
-print(math.sqrt(16))  # 4.0
-```
-Use when: square roots, trig, logs, constants (`math.pi`) — anything basic operators can't do.
+### os
+- Interact with OS — paths, folders, env variables
+- `os.getcwd()` → current directory
+- `os.listdir()` → list files
+- `os.getenv("KEY")` → read env variable safely
 
-### `random`
-Generates randomness — numbers, choices, shuffles.
-```python
-import random
-print(random.randint(1, 10))          # random int, inclusive both ends
-print(random.choice(['apple', 'banana', 'cherry']))  # random pick from a list
-```
-Use when: simulations, sampling, randomized test data, games.
+### csv
+- Read/write CSV files
+- `csv.reader(file)` → read rows
+- `csv.writer(file)` → write rows
 
-### `csv`
-Reads/writes CSV (comma-separated) files without manually splitting strings on commas.
-```python
-import csv
+### math
+- Math beyond +, -, *, /
+- `math.sqrt(x)`, `math.ceil(x)`, `math.floor(x)`, `math.pi`
 
-with open("example.txt", mode="w", newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(["Name", "Age", "City"])
-    writer.writerow(["Alice", 30, "New York"])
+### time
+- Delays and measuring execution time
+- `time.sleep(seconds)` → pause
+- `time.time()` → current timestamp
 
-with open("example.txt", mode='r') as file:
-    reader = csv.reader(file)
-    for row in reader:
-        print(row)
-```
-Key details:
-- `mode="w"` = write (overwrites file); `mode="r"` = read.
-- `newline=''` on write — prevents extra blank lines between rows on Windows; harmless but correct to always include.
-- `csv.writer`/`csv.reader` wrap the file object — you still need `open()` first.
-- Reading gives you each row as a **list of strings** (`['Alice', '30', 'New York']`) — note `30` comes back as a string, not an int, since CSV is plain text.
+### datetime
+- Dates and times
+- `datetime.now()` → current date/time
+- `datetime.strftime()` → format date as string
 
-### `os`
-Lets Python talk to the operating system — file paths, directories, environment variables — instead of hardcoding OS-specific behavior.
-```python
-import os
+### shutil
+- Copy/move/delete files or folders
+- `shutil.copy(src, dst)`
+- `shutil.move(src, dst)`
 
-os.getcwd()                  # current working directory
-os.listdir('.')              # list files/folders in a directory
-os.path.exists('file.txt')   # check if a file/folder exists
-os.path.join('folder', 'file.txt')  # build a path safely across OS (Windows vs Mac/Linux use different slashes)
-os.makedirs('new_folder', exist_ok=True)  # create a folder (won't error if it already exists)
-os.remove('file.txt')        # delete a file
-```
-Why it matters going forward: this is the exact mechanism your Jarvis project and any future file-based project (loading a PDF for RAG, checking if a `.env` exists, writing logs) relies on. Trigger: any time your code needs to check, create, move, or find something on disk — `os` is the tool.
+### json
+- Convert between JSON and Python dict
+- File → `json.load()` / `json.dump()`
+- String → `json.loads()` / `json.dumps()`
 
-## Modules & Packages
-- **Module** = a single `.py` file you can `import`.
-- **Package** = a folder of modules, made importable by adding an `__init__.py` file inside it (as done in `package_folder/`).
-- `import mymodule` pulls in a whole file; `from mymodule import myfunction` pulls in just one piece.
+### re (regular expressions)
+- Pattern matching, not exact match
+- `re.findall(pattern, text)` → all matches
+- `re.search(pattern, text)` → first match
+- `re.sub(pattern, repl, text)` → find & replace
+- Always use raw string `r"..."` for patterns
 
-## Exception Handling
-```python
-try:
-    risky_code()
-except SomeError as e:
-    handle_it(e)
-finally:
-    always_runs()
-```
-Use when: code might fail (file missing, bad user input, network call) and you want the program to fail gracefully instead of crashing.
+### random
+- Generate random values
+- `random.randint(a, b)` → random int in range
+- `random.choice(list)` → random item from list
+- `random.shuffle(list)` → shuffle list in place
