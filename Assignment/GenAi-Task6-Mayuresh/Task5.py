@@ -8,7 +8,7 @@ while True: # for continuous loop
         # condition for negative value
         convert = float(user)
         if convert < 0:
-            raise ValueError
+            raise ValueError 
         cart.append(convert)
     # exception for invalid inputs
     except ValueError:
