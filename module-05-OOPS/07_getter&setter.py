@@ -30,6 +30,9 @@ class Product:
         self.price = price
         self.stock = stock
 
+    def __str__(self):
+        return "TV - ₹15000 (20 in stock)"
+
     @property
     def price(self):
         return self.__price
@@ -57,6 +60,9 @@ class Product:
             self.__stock -= quantity
             print(f"Available Stock is {self.__stock} and total sale value is {quantity*self.price}")
         
+p1 = Product("Tv", "Electronic", 10000, 20)
+print(p1)
+
 try:     
     p1 = Product("Tv", "Electronic", 1000, 20)
     print(p1.price)
