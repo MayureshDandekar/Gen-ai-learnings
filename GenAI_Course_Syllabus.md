@@ -7,7 +7,7 @@
 ## ✅ Completed
 
 | Module | Topic | Assignment |
-|---|---|---|
+|--------|-------|------------|
 | 1 | How to connect with mentors and resolve doubts | — |
 | 2 | How to learn from this course | — |
 | 3 | Introduction | — |
