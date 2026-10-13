@@ -16,16 +16,16 @@ df = pd.DataFrame({
 # loc/iloc on DataFrames
 # print(df.loc[2, 'num_tokens'])
 # print(df.loc[0:2]) # here indexing goes up to 0,1,2
-# print(df.iloc[0:2]) # here 2 is excluded
-# print(df.loc[:,['source_doc', 'num_tokens']])
+# print(df.iloc[0:2]) # here 2 is excluded 
+# print(df.loc[:,['source_doc', 'num_tokens']]) 
 
 # sorting
 # print(df.sort_values('num_tokens')) 
 # print(df.sort_values('num_tokens', ascending=False)) # here we want sorting with desending so ascending=False
-print(df.sort_values(['source_doc', 'num_tokens'])) # here sorting happen with first given column alphabetically
+# print(df.sort_values(['source_doc', 'num_tokens'])) # here sorting happen with first given column alphabetically
 
 # apply/map on DataFrame
-print(df[['num_tokens', 'retrieval_score']].apply(lambda col: col.sum())) # here dataframe gives data as a column not scalar element
-print(df[['num_tokens', 'retrieval_score']].apply(lambda col: col.sum(), axis=1)) # sum row wise
+# print(df[['num_tokens', 'retrieval_score']].apply(lambda col: col.sum())) # here dataframe gives data as a column not scalar element
+# print(df[['num_tokens', 'retrieval_score']].apply(lambda col: col.sum(), axis=1)) # sum row wise
 
-print(df.map(lambda x: x*10)) # map can access each elment not columns 
+# print(df.map(lambda x: x*10)) # map can access each elment not columns 

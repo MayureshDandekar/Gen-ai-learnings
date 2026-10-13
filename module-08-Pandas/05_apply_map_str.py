@@ -8,7 +8,7 @@ def size_category(n):
     elif n<60: return "medium"
     else : return "long"
 
-# apply()e
+# apply()
 sizes = token_count.apply(size_category) # we can use map() func. for same output
 # map()
 category_map = {"short":"S", "medium":"M", "long":"L"}
