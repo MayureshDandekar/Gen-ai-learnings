@@ -21,7 +21,7 @@ print()
 
 
 # Functions: head/tail/sample
-print('head(3):') # return last n num of rows
+print('head(3):') # return first n num of rows
 print(df.head(3))
 print() 
 print('tail(2)') # return last n num of rows

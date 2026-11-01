@@ -10,6 +10,7 @@ def size_category(n):
 
 # apply()
 sizes = token_count.apply(size_category) # we can use map() func. for same output
+print(sizes) 
 # map()
 category_map = {"short":"S", "medium":"M", "long":"L"}
 short_code = sizes.map(category_map)

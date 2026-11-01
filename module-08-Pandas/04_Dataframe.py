@@ -15,11 +15,11 @@ print(df)
 print(df.dtypes)
 
 # Method 2 : List of Dictionar 
-rows = [
+rows =pd.DataFrame([
     {'chunk_id' : 1, 'source_doc': 'policy.pdf', 'num_tokens': 42},
     {'chunk_id': 2, 'source_doc': 'faq.pdf', 'num_tokens': 38, 'flagged': True},
-]
-df = pd.DataFrame(rows)
+])
+# df = pd.DataFrame(rows) # converting into dataframe
 print(df)
 print(df.dtypes)
 

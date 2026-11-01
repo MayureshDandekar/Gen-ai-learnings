@@ -59,3 +59,4 @@ import re # re module is used for regular expression operations
 text = "Golden sunlight pierced the dense morning fog, A Warming the damp earth as a lone sparrow began its quiet, Melodic song of awakening."
 capital_word = re.findall(r"[A-Z]\w+", text) # finding all capitalized words in the text
 print(capital_word) # printing the list of capitalized words
+
